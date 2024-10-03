@@ -1,14 +1,14 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = "out"
   node_version = "18"  # 使用するNode.jsのバージョンを指定
 
 [context.production.environment]
   NODE_VERSION = "18"
 
 # Functionsディレクトリを指定（必要に応じて）
-#[functions]
-#  directory = "netlify/functions"
+# [functions]
+#   directory = "netlify/functions"
 
 [ssg]
   name = "nextjs"
