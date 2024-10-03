@@ -20,6 +20,13 @@ export function SimplePortfolio() {
     }
   };
 
+  // 「Software Engineer」がクリックされたときに散らばりをリセット
+  const handleResetClick = () => {
+    if (isScattered) {
+      setIsScattered(false);
+    }
+  };
+
   // 名前を一文字ずつ分割
   const name = "Yusuke Sugimura";
   const nameCharacters = name.split("");
@@ -83,8 +90,22 @@ export function SimplePortfolio() {
           </span>
         ))}
       </h1>
-      
-      <p className="text-xl text-[#5F9EA0] mb-8">Software Engineer</p>
+<p 
+        className={`text-xl text-[#5F9EA0] mb-8 cursor-pointer select-none flex flex-wrap justify-center ${
+          isScattered ? 'reset' : ''
+        }`}
+        onClick={handleResetClick}
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            handleResetClick();
+          }
+        }}
+        aria-label="職業をクリックすると文字が元に戻ります"
+      >
+        Software Engineer
+      </p>
       <div className="flex space-x-6">
         {/* Twitter アイコン */}
         <Button
