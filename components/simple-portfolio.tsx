@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import { Button } from "@/components/ui/button"
 import { Twitter, Mail, Instagram , BookHeart} from "lucide-react"
 
@@ -24,6 +24,37 @@ export function SimplePortfolio() {
   const name = "Yusuke Sugimura";
   const nameCharacters = name.split("");
 
+  // ページアクセス後に3〜10秒で自動的に散らばりを開始する
+  useEffect(() => {
+    // 散らばりがすでに発動している場合は何もしない
+    if (isScattered) return;
+
+    // ランダムな遅延時間（ミリ秒）を生成（3000ms〜10000ms）
+    const minDelay = 3000; // 3秒
+    const maxDelay = 10000; // 10秒
+    const randomDelay = Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
+
+    // タイマーを設定
+    const timer = setTimeout(() => {
+      setIsScattered(true);
+    }, randomDelay);
+
+    // クリーンアップ関数でタイマーをクリア
+    return () => clearTimeout(timer);
+  }, [isScattered]);
+
+  // ページがリロードされた際に散らばり状態を保持する（ローカルストレージを使用）
+  useEffect(() => {
+    const scatteredState = localStorage.getItem('isScattered');
+    if (scatteredState === 'true') {
+      setIsScattered(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('isScattered', isScattered.toString());
+  }, [isScattered]);
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#F0EAE2] text-gray-800 p-4">
       {/* 名前をクリック可能にし、散らばり状態に応じてクラスを変更 */}
@@ -32,6 +63,14 @@ export function SimplePortfolio() {
           isScattered ? 'scatter' : ''
         }`}
         onClick={handleNameClick}
+        tabIndex={0} // キーボード操作を可能にする
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            handleNameClick();
+          }
+        }}
+        aria-label="名前をクリックすると散らばります"
       >
         {nameCharacters.map((char, index) => (
           <span 
