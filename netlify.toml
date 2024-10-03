@@ -12,3 +12,9 @@
 
 [ssg]
   name = "nextjs"
+
+[redirects]
+from = "/*"
+to = "/"
+status = 200
+force = true
