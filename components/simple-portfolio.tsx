@@ -5,7 +5,7 @@ import { Twitter, Mail, Instagram } from "lucide-react"
 
 export function SimplePortfolio() {
   // 関数を使用して新しいタブでリンクを開く
-  const openLink = (url) => {
+  const openLink = (url: string) => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
