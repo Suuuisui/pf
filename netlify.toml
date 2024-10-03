@@ -7,8 +7,8 @@
   NODE_VERSION = "18"
 
 # Functionsディレクトリを指定（必要に応じて）
-[functions]
-  directory = "netlify/functions"
+#[functions]
+#  directory = "netlify/functions"
 
 [ssg]
   name = "nextjs"
