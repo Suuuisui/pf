@@ -52,6 +52,74 @@ body {
   --rotate: 180;
 }
 
+.scatter-item:nth-child(4) {
+  --translate-x: 53;
+  --translate-y: -73;
+  --rotate: 800;
+}
+
+.scatter-item:nth-child(5) {
+  --translate-x: -32;
+  --translate-y: -55;
+  --rotate: -842;
+}
+
+.scatter-item:nth-child(6) {
+  --translate-x: 14;
+  --translate-y: 99;
+  --rotate: 893;
+}
+
+.scatter-item:nth-child(7) {
+  --translate-x: 52;
+  --translate-y: 63;
+  --rotate: 890;
+}
+
+.scatter-item:nth-child(8) {
+  --translate-x: 62;
+  --translate-y: -38;
+  --rotate: -389;
+}
+
+.scatter-item:nth-child(9) {
+  --translate-x: -42;
+  --translate-y: 78;
+  --rotate: 356;
+}
+
+.scatter-item:nth-child(10) {
+  --translate-x:  83;
+  --translate-y: -32;
+  --rotate: 487;
+}
+
+.scatter-item:nth-child(11) {
+  --translate-x: 43;
+  --translate-y: 93;
+  --rotate: 187;
+}
+
+.scatter-item:nth-child(12) {
+  --translate-x: 85;
+  --translate-y: 36;
+  --rotate: -432;
+}
+
+.scatter-item:nth-child(13) {
+  --translate-x: 56;
+  --translate-y: 92;
+  --rotate: 998;
+}
+
+.scatter-item:nth-child(14) {
+  --translate-x: -12;
+  --translate-y: -89;
+  --rotate: 432;
+}
+
+
+
 /* 必要に応じて各項目に異なる値を設定 */
 
 /* 以下、スパンに遅延を追加 */
