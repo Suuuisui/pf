@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button"
-import { Twitter, Mail, Instagram } from "lucide-react"
+import { Twitter, Mail, Instagram , BookHeart} from "lucide-react"
 
 export function SimplePortfolio() {
   // 散らばり状態を管理するためのステート
@@ -78,6 +78,17 @@ export function SimplePortfolio() {
           aria-label="Instagram"
         >
           <Instagram className="h-6 w-6" />
+        </Button>
+
+         {/* note アイコン */}
+        <Button
+          variant="ghost"
+          size="icon"
+          className="rounded-full hover:bg-[#E6DFD6]"
+          onClick={() => openLink('https://note.com/cv98')}
+          aria-label="BookHeart"
+        >
+          <BookHeart className="h-6 w-6" />
         </Button>
       </div>
     </div>
